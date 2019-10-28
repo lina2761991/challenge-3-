@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>My easy Assessment</title>
+    <link href="lina.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <hr>
+  </head>
+
+  <body>
+   <div id ="myInfo">
+   	<header>HTML is Eazy</header>
+   	<p>HyperText Markup Language (HTML) is the standard markup language for creating web pages and web applications. </p>
+    </div>
+    <input type="text" name="name">
+    <button>Add</button>
+    <ul>
+    	<li>Lina</li>
+    	<li>Ben</li>
+    	<li>Salem</li>
+    </ul>
+    <script>
+      $( "button" ).click(function() {
+        $( "ul" ).text($("input").val());
+      });
+    </script>
+  </body>
+
+</html>

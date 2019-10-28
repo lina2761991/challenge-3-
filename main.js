@@ -12,11 +12,42 @@
 //lets make an employee profile using closures
 
 function employee(name, salary) {
+	var friends = [];
+	var firstNameFriends = [];
     return {
         name: name,
-        salary: salary
-    }
-}
+        salary: salary,
+        sayMyName: function(){
+        	return name;
+        },
+        sayHello: function(){
+        	return 'hello '+name;
+        },
+        increaseSalary: function(n){
+        	var s = salary+n;
+        	return 'your salary is ' + s + '$';
+        }, 
+        addFriend: function(obj){
+        	friends.push(obj);
+        	firstNameFriends.push(obj.name);
+        	if(friends.length ===1){
+        		return 'you just became friends with ' + friends[0].name;
+        	}
+        	else if(friends.length > 1){
+        		return ' you just became friends with '+ firstNameFriends.join(' and ');
+        	}
+        },
+        listFriends: function(){
+        	if(friends.length === 1){
+        	return 'you have ' + friends.length + ' friend.';
+            }
+
+             else{
+        	    return 'you have ' + friends.length + ' friends.';
+        	     }
+        	 }
+            }
+        }
 
 var employeeA = employee("jack", 100);
 var employeeB = employee("Mark", 200);
@@ -70,8 +101,48 @@ var employeeC = employee("Sara", 150);
 
 // Write your code here .....
 
+function Pet(name){
+	var pet = {};
+
+	pet.name = name;
+	pet.addInfo = addInfoF;
+	pet.ageI = ageIF;
+	pet.availability = false;
+	pet.checkState = checkStateF;
+	pet.changeState = changeStateF;
+
+	return pet;
+}
+
+function addInfoF(age, owner, gender, species){
+	this.age = age;
+	this.owner = owner;
+	this.gender = gender;
+	this.species = species;
+
+}
+function ageIF(n){
+	var a = this.age+n;
+	this.age = a;
+
+}
+function checkStateF(){
+	return this.availability;
+}
+
+function changeStateF(){ 
+	if(this.availability === false){
+		this.availability = true;
+		return this.availability;
+	}
+	else {
+		this.availability = false;
+		return this.availability;
+	}
+}
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+//Yes Iam 
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -102,6 +173,17 @@ function reduce(array, f, acc) {
 // Use the updated version of reduce to write a function max that returns the maximum number in an array of numbers. 
 
 // Write your code here .....
+
+function maximum (arr){
+	return reduce(arr,function(res,element){
+		if(element>res){
+			return element;
+		}
+		else {
+			return res;
+		}
+	})
+}
 
 
 

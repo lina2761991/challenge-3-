@@ -1,0 +1,10 @@
+body{
+	background-color: pink;
+}
+header{
+	font-family: fantasy;
+}
+input{
+	height: 80px;
+	width: 180px;
+}
